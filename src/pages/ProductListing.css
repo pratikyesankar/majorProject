@@ -3,7 +3,9 @@
   font-size: 1.2em;
   color: #333;
 }
-
+.books-list {
+  background-color: #b6b6b6;
+}
 .products-header span {
   font-size: 0.9em;
   color: #777;
@@ -132,6 +134,11 @@
 
 .clear-filters-button:hover {
   background-color: #ddd;
+}
+.product-grid {
+  display: flex;
+  justify-content: center;
+  gap: 2rem 0;
 }
 
 .products-list {

@@ -1,4 +1,5 @@
 import React, { useState } from "react"
+import "./Filters.css"
 
 function Filters({ onFilterChange, onClearFilters }) {
   const [categories, setCategories] = useState([])

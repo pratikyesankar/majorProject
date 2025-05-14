@@ -94,7 +94,7 @@ function ProductListing() {
           />
         </div>
         {/* Right side: List of books */}
-        <div className="col-md-8">
+        <div className="col-md-8 books-list">
           <div className="products-header">
             SHOWING ALL BOOKS{" "}
             <span>(Showing {filteredBooks.length} books)</span>

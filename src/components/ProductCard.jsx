@@ -1,6 +1,7 @@
 import React, { useContext, useState } from "react"
 import { Link } from "react-router-dom"
 import { AppContext } from "../context/AppContext"
+import "./ProductCard.css"
 
 function ProductCard({ product }) {
   const { addToCart, addToWishlist, removeFromWishlist, wishlist, cart } =

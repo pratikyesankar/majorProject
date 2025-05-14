@@ -11,7 +11,7 @@ function Home() {
       <h3>Featured Categories</h3>
       <div className="row">
         {categories.map((category) => (
-          <div key={category} className="col-md-4">
+          <div key={category} className="home col-md-4">
             <Link to={`/products/${category}`} className="card mb-3">
               <div className="card-body">
                 <h5 className="card-title">{category}</h5>
