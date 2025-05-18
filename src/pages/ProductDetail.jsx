@@ -22,13 +22,13 @@ function ProductDetail() {
           <p>Rating: {product.rating} ⭐</p>
           <p>{product.description}</p>
           <button
-            className="btn btn-primary me-2"
+            className="btn btn-outline-secondary me-2"
             onClick={() => addToCart(product)}
           >
             Add to Cart
           </button>
           <button
-            className="btn btn-outline-secondary"
+            className="btn btn-outline-secondary me-2"
             onClick={() => addToWishlist(product)}
           >
             Add to Wishlist

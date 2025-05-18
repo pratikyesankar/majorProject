@@ -1,4 +1,5 @@
 .navbar {
+  justify-content: space-between;
   background-color: #343434;
   padding: 0.5rem 0;
   width: 100%;
@@ -6,7 +7,7 @@
 
 .navbar-container {
   display: flex;
-  align-items: center;
+  /* align-items: center; */
   justify-content: space-between;
   padding: 0 1rem;
 }
@@ -49,11 +50,11 @@
 .navbar .btn-outline-success {
   border-radius: 0 20px 20px 0;
   border: none;
-  background-color: #3498db;
-  color: #ffffff;
+  background-color: #a2d2ff;
+  color: #040404;
   transition: background-color 0.3s ease;
 }
 
 .navbar .btn-outline-success:hover {
-  background-color: #2980b9;
+  background-color: #a2d2ff;
 }

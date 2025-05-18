@@ -1,27 +1,34 @@
-.row {
+.home-card {
+  background-color: #a2d2ff;
+  border-radius: 10px;
+  text-align: center;
   display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+
+  margin: 10px auto;
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+  color: #333;
 }
 
-.home {
-  border: 1px solid #242323;
-  margin: 5px;
+.home-card:hover {
+  background-color: #b5e0fa;
+  transition: background-color 0.3s ease;
 }
 
-.card {
-  border: 1px solid #242323;
-  border-radius: 8px;
-  margin-top: 5px;
-  margin: 5px;
+.home-card .card-body {
+  background-color: #b5e0fa;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
 }
 
-.card-body {
-  padding: 10px;
-}
-
-.card-title {
+.home-card .card-title {
   margin-bottom: 0;
   font-size: 1.2em;
-  color: #333;
 }

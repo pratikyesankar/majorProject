@@ -5,6 +5,7 @@
   margin-bottom: 15px;
   padding: 10px;
   background-color: #fff;
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .cart-item-card img {
@@ -79,6 +80,15 @@
 
 .card-buttons .btn-outline-secondary:hover {
   color: white;
+}
+.remove-button {
+  margin: 4px;
+  color: white;
+  background-color: rgb(87, 87, 87);
+}
+.wishlist-button {
+  color: black;
+  background-color: white;
 }
 
 .cart-item-card > div:last-child {

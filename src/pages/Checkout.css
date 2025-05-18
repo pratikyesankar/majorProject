@@ -1,0 +1,32 @@
+.checkout-container {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.checkout-container h2 {
+  margin-bottom: 20px;
+}
+
+.card {
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.price-details-card {
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 20px;
+}
+
+.btn-primary {
+  border-radius: 5px;
+  width: 100%;
+}
+
+@media (max-width: 767px) {
+  .price-details-card {
+    position: static;
+  }
+}

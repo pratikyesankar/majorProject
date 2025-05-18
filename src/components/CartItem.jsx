@@ -2,43 +2,47 @@ import React, { useContext } from "react"
 import { AppContext } from "../context/AppContext"
 import "./CartItem.css"
 
-function CartItem({ item, onMoveToWishlist }) {
-  const { removeFromCart, updateCartQuantity } = useContext(AppContext)
+function CartItem({ item }) {
+  const { removeFromCart, updateCartQuantity, addToWishlist } =
+    useContext(AppContext)
 
   return (
-    <div className="cart-item-card">
+    <div className="col-md-12 cart-item-card">
       <img
         src="https://plus.unsplash.com/premium_photo-1683133333081-452251d2a031?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-        className="container-fluid"
+        className="item-image"
         alt={item.name}
-        style={{ width: "100px", height: "150px", objectFit: "cover" }}
       />
-      <div className="cart-price">
-        <p>{item.name}</p>
-        <p>Price: ${item.price.toFixed(2)}</p>
+      <div className="item-details">
+        <p className="item-name">{item.name}</p>
+        <p className="item-price">Price: ${item.price.toFixed(2)}</p>
         <div className="quantity-control">
           <button
-            className="btn btn-outline-secondary btn-sm"
+            className="quantity-button"
             onClick={() => updateCartQuantity(item.id, item.quantity - 1)}
+            disabled={item.quantity <= 1}
           >
             -
           </button>
-          <span>{item.quantity}</span>
+          <span className="item-quantity">{item.quantity}</span>
           <button
-            className="btn btn-outline-secondary btn-sm"
+            className="quantity-button"
             onClick={() => updateCartQuantity(item.id, item.quantity + 1)}
           >
             +
           </button>
         </div>
-        <div className="card-buttons mt-2">
-          <button className="btn" onClick={() => removeFromCart(item.id)}>
+        <div className="button-container">
+          <button
+            className="remove-button"
+            onClick={() => removeFromCart(item.id)}
+          >
             Remove
           </button>
           <button
-            className="btn btn-outline-secondary"
+            className="wishlist-button"
             onClick={() => {
-              onMoveToWishlist()
+              addToWishlist(item)
               removeFromCart(item.id)
             }}
           >

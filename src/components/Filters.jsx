@@ -5,7 +5,6 @@ function Filters({ onFilterChange, onClearFilters }) {
   const [categories, setCategories] = useState([])
   const [rating, setRating] = useState(0)
   const [sortPrice, setSortPrice] = useState("")
-  const [priceRange, setPriceRange] = useState(150)
 
   const handleCategoryChange = (e) => {
     const { value, checked } = e.target
@@ -20,33 +19,25 @@ function Filters({ onFilterChange, onClearFilters }) {
       categories: updatedCategories,
       rating,
       sortPrice,
-      priceRange,
     })
   }
 
   const handleRatingChange = (e) => {
     const newRating = parseInt(e.target.value)
     setRating(newRating)
-    onFilterChange({ categories, rating: newRating, sortPrice, priceRange })
+    onFilterChange({ categories, rating: newRating, sortPrice })
   }
 
   const handleSortChange = (e) => {
     const newSort = e.target.value
     setSortPrice(newSort)
-    onFilterChange({ categories, rating, sortPrice: newSort, priceRange })
-  }
-
-  const handlePriceChange = (e) => {
-    const newPrice = parseInt(e.target.value)
-    setPriceRange(newPrice)
-    onFilterChange({ categories, rating, sortPrice, priceRange: newPrice })
+    onFilterChange({ categories, rating, sortPrice: newSort })
   }
 
   const clearAllFilters = () => {
     setCategories([])
     setRating(0)
     setSortPrice("")
-    setPriceRange(150)
     onClearFilters()
   }
 
@@ -54,27 +45,17 @@ function Filters({ onFilterChange, onClearFilters }) {
     <div className="filters-sidebar">
       <h5>
         Filters
-        <a href="#" className="clear-filters" onClick={clearAllFilters}>
+        <button
+          className="clear-filters btn btn-link p-0 ms-2"
+          onClick={clearAllFilters}
+          style={{ textDecoration: "none", color: "#007bff" }}
+        >
           Clear
-        </a>
+        </button>
       </h5>
       <div className="mb-3">
-        <h6>PRICE</h6>
-        <input
-          type="range"
-          className="form-range"
-          min="0"
-          max="1000"
-          value={priceRange}
-          onChange={handlePriceChange}
-        />
-        <div className="d-flex justify-content-between">
-          <span>{priceRange}</span>
-        </div>
-      </div>
-      <div className="mb-3">
         <h6>CATEGORY</h6>
-        {["Fiction", "Thriller", "Romance", "Fantasy"].map((cat) => (
+        {["Fiction", "Thriller", "Romance", "Fantasy", "Sci-Fi"].map((cat) => (
           <div key={cat} className="form-check">
             <input
               type="checkbox"
@@ -89,6 +70,7 @@ function Filters({ onFilterChange, onClearFilters }) {
       </div>
       <div className="mb-3">
         <h6>RATING</h6>
+
         {[4, 3, 2, 1].map((star) => (
           <div key={star} className="form-check">
             <input
